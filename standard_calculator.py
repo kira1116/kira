@@ -1,23 +1,25 @@
 import math
+
 def calculator():
     print("Scientific Calculator")
     try:
-        while True:
+        while True:  
             op = input("Enter operation (+, -, *, /, sin, cos, tan, sqrt, log, ln, pow) or type exit: ")
             if op == "exit":
                 print("Exiting the calculator")
                 break
-
+            
             list_op = ["+", "-", "/", "*", "sin", "cos", "tan", "sqrt", "log", "ln", "pow"]
             if op not in list_op:
                 print("Please enter a valid operator")
                 continue
 
+            
             if op in ["sin", "cos", "tan", "sqrt", "log", "ln"]:
                 try:
                     number = float(input("Enter number: "))
                     if op == "sin":
-                        result = math.sin(math.radians(number))  # angle in degrees
+                        result = math.sin(math.radians(number))
                         print(f"sin({number}) = {result}")
                     elif op == "cos":
                         result = math.cos(math.radians(number))
@@ -46,6 +48,7 @@ def calculator():
                 except ValueError:
                     print("Invalid input! Please enter a number.")
 
+            
             elif op == "pow":
                 try:
                     base = float(input("Enter base (x): "))
@@ -54,6 +57,8 @@ def calculator():
                     print(f"{base}^{exp} = {result}")
                 except ValueError:
                     print("Invalid input! Please enter numbers.")
+
+            
             else:
                 numbers = []
                 while True:
@@ -92,8 +97,8 @@ def calculator():
                 print(" ".join(map(str, numbers)), "=", result)
     except Exception as e:
         print(f"Invalid operation: {e}")
-
+    
     print("Developed by: KIRUBEL TEGEGN")
     print("good-by")
-calculator()
 
+calculator()
