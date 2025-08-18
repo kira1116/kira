@@ -13,7 +13,6 @@ def calculator():
                 print("Please enter a valid operator")
                 continue
 
-            # --- Single number operations ---
             if op in ["sin", "cos", "tan", "sqrt", "log", "ln"]:
                 try:
                     number = float(input("Enter number: "))
@@ -47,7 +46,6 @@ def calculator():
                 except ValueError:
                     print("Invalid input! Please enter a number.")
 
-            # --- Power operation (x^y) ---
             elif op == "pow":
                 try:
                     base = float(input("Enter base (x): "))
@@ -56,8 +54,6 @@ def calculator():
                     print(f"{base}^{exp} = {result}")
                 except ValueError:
                     print("Invalid input! Please enter numbers.")
-
-            # --- Multi-number operations (+, -, *, /) ---
             else:
                 numbers = []
                 while True:
@@ -100,3 +96,4 @@ def calculator():
     print("Developed by: KIRUBEL TEGEGN")
     print("good-by")
 calculator()
+
